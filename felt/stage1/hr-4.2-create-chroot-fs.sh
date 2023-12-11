@@ -3,7 +3,7 @@
 # ===| Setup |=================================================================
 
 # Cat the file contents out.
-cat ./"${BASH_SOURCE[0]}" && read -p "\nPress enter to continue...\n"
+cat ./"${BASH_SOURCE[0]}" && read -p "*** Press enter to continue..."
 
 # =============================================================================
 
