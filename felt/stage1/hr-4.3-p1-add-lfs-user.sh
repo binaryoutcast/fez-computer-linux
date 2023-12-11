@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Cat the file contents out.
+cat ./"${BASH_SOURCE[0]}"
+read -p "Press enter to continue..."
+
+# The script ==================================================================
 # Create LFS User
 groupadd lfs
 useradd -s /bin/bash -g lfs -m -k /dev/null lfs

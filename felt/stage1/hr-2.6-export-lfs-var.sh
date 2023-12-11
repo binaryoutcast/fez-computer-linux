@@ -1,5 +1,8 @@
 #!/bin/bash
 
-# Export and verify the LFS variable has been exported
+# The script
 export LFS=/mnt/lfs
-echo $LFS
+
+# Put the LFS Var in the prompt for assurance
+export PS1="\n(LFS Mount Point: \$LFS)$PS1"
+
