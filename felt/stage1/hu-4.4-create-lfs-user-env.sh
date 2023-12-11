@@ -1,14 +1,20 @@
 #!/bin/bash
 
-# Cat the file contents out.
-cat ./"${BASH_SOURCE[0]}"
-read -p "Press enter to continue..."
+# ===| Setup |=================================================================
 
-# The script ==================================================================
+# Cat the file contents out.
+cat ./"${BASH_SOURCE[0]}" && read -p "\nPress enter to continue...\n"
+
+# =============================================================================
+
+# ===| Main |==================================================================
+
 # Create Bash Profile
 cat > ~/.bash_profile << "EOF"
 exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
 EOF
+
+# -----------------------------------------------------------------------------
 
 # Create Bash RC
 cat > ~/.bashrc << "EOF"
@@ -28,7 +34,10 @@ alias cls="clear"
 alias edit="nano"
 alias untar="tar -xf"
 export PS1="\n(LFS Mount Point: \$LFS)\n\[\033[32m\]\u@\H \[\033[35m\]HOST-LINUX \[\033[33m\]\${PWD}\[\033[0m\]\n$ "
-
 EOF
 
+# -----------------------------------------------------------------------------
+
 echo "\nPlease execute the last command in Chapter 4.4 manually."
+
+# =============================================================================

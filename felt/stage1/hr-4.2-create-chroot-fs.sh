@@ -1,10 +1,14 @@
 #!/bin/bash
 
-# Cat the file contents out.
-cat ./"${BASH_SOURCE[0]}"
-read -p "Press enter to continue..."
+# ===| Setup |=================================================================
 
-# The script ==================================================================
+# Cat the file contents out.
+cat ./"${BASH_SOURCE[0]}" && read -p "\nPress enter to continue...\n"
+
+# =============================================================================
+
+# ===| Main |==================================================================
+
 mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
 
 for i in bin lib sbin; do
@@ -16,3 +20,5 @@ case $(uname -m) in
 esac
 
 mkdir -pv $LFS/tools
+
+# =============================================================================
